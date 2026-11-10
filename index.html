@@ -89,6 +89,9 @@
   .invite{font-size:17px;color:#5a3a2c}
   .sign{font-family:'Suravaram',serif;font-size:32px;color:var(--maroon);margin-top:6px;line-height:1.4}
   .footer{color:var(--gold-soft);text-align:center;font-size:15px;opacity:.85;margin-top:10px}
+  #countCard{display:none}
+  #countCard.on{display:block;animation:rise 1.1s cubic-bezier(.2,1,.4,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(40px) scale(.96)}to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -120,7 +123,7 @@
     <div class="shower" id="shower"></div>
   </section>
 
-  <section class="card">
+  <section class="card" id="countCard">
     <h2>ముహూర్తానికి ఇంకా</h2>
     <div class="count">
       <div><b id="d">00</b><span>రోజులు</span></div>
@@ -213,6 +216,10 @@
     const cx = br.left - cr.left + br.width/2, cy = br.top - cr.top + br.height/2;
     for (let i = 0; i < 36; i++) setTimeout(() => rosePetal(cx, cy, true), i*18);
     for (let i = 0; i < 70; i++) setTimeout(() => rosePetal(Math.random()*card.clientWidth, 0, false), 200 + i*55);
+    setTimeout(() => {
+      const cc = document.getElementById('countCard'); cc.classList.add('on','show');
+      setTimeout(() => cc.scrollIntoView({behavior:'smooth', block:'nearest'}), 400);
+    }, 1400);
     document.getElementById('hint').textContent = '✦ సుముహూర్తం: గురువారం, నవంబర్ 26, 2026 ఉదయం 9:45 గంటలకు ✦';
   }
   box.addEventListener('click', doReveal);
