@@ -39,7 +39,7 @@
   }
   .orn{color:var(--gold);font-size:22px;letter-spacing:10px;margin:4px 0 12px}
   .eyebrow{font-family:'Ramaraja',serif;font-size:22px;color:var(--maroon)}
-  .ganesha-art{display:block;width:72%;max-width:280px;height:auto;margin:-10px auto 12px;filter:drop-shadow(0 6px 10px rgba(107,15,26,.18))}
+  .ganesha-art{display:block;width:36%;max-width:140px;height:auto;margin:-6px auto 10px;filter:drop-shadow(0 6px 10px rgba(107,15,26,.18))}
   .ganesha{font-family:'Ramaraja',serif;font-size:20px;color:var(--maroon);margin-bottom:8px}
   .hon{display:block;font-size:15px;color:#a0702a;font-weight:500;margin-bottom:-6px}
   h1.names{font-family:'Suravaram',serif;font-weight:400;color:var(--maroon);font-size:clamp(40px,11vw,56px);line-height:1.35;margin:14px 0 4px}
@@ -47,12 +47,22 @@
   .tag{font-size:17px;color:#6a4a3c;margin-top:12px}
   h2{font-family:'Ramaraja',serif;font-weight:400;color:var(--maroon);font-size:28px;margin-bottom:4px;line-height:1.4}
 
-  .reveal{position:relative;width:100%;max-width:330px;height:150px;margin:18px auto 8px;border-radius:14px;overflow:hidden;
-    background:linear-gradient(135deg,#fff3d6,#fde8b8);border:1px solid var(--gold)}
-  .reveal .under{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .reveal .under .big{font-size:30px;color:var(--maroon);font-weight:700}
+  #muhurtCard{overflow:hidden}
+  .reveal{position:relative;width:100%;max-width:330px;height:170px;margin:16px auto 8px;border-radius:14px;cursor:pointer;
+    background:radial-gradient(circle at 50% 50%,#fff6e0,#fde8b8);border:1px solid var(--gold);-webkit-tap-highlight-color:transparent}
+  .reveal .under{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    opacity:0;transform:scale(.6);transition:opacity 1.1s ease .5s, transform 1.1s cubic-bezier(.2,1.4,.4,1) .5s}
+  .reveal.open .under{opacity:1;transform:none}
+  .reveal .under .big{font-size:32px;color:var(--maroon);font-weight:700;text-shadow:0 0 18px rgba(212,162,76,.9)}
   .reveal .under .small{font-size:17px;color:var(--ink);margin-top:2px}
-  .reveal canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:pointer;transition:opacity .8s}
+  .rose-cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transition:opacity .7s ease, transform .9s ease}
+  .rose{width:104px;height:104px;animation:bloom 2.4s ease-in-out infinite;filter:drop-shadow(0 6px 10px rgba(107,15,26,.3))}
+  @keyframes bloom{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.08) rotate(6deg)}}
+  .rose-tap{font-size:14px;color:var(--maroon);margin-top:4px;font-weight:600}
+  .reveal.open .rose-cover{opacity:0;transform:scale(1.9) rotate(60deg);pointer-events:none}
+  .shower{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:hidden;border-radius:18px}
+  .rp{position:absolute;top:0;left:0;will-change:transform,opacity}
   .hint{font-size:15px;color:#8a6a4c;margin-top:6px}
 
   .count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 10px}
@@ -94,16 +104,20 @@
     <p class="tag">రెండు హృదయాలు, ఒకే పయనం — పెద్దల ఆశీస్సులతో, సంప్రదాయబద్ధంగా</p>
   </section>
 
-  <section class="card">
+  <section class="card" id="muhurtCard">
     <h2>శుభ ముహూర్తం</h2>
-    <div class="reveal" id="reveal">
-      <div class="under">
+    <div class="reveal" id="reveal" role="button" tabindex="0" aria-label="శుభ ముహూర్తం చూడటానికి గులాబీని తాకండి">
+      <div class="under" id="dateBox">
         <div class="big">26 · 11 · 2026</div>
         <div class="small">గురువారం, ఉదయం 9:45 గంటలకు</div>
       </div>
-      <canvas id="scratch" aria-label="శుభ ముహూర్తం చూడటానికి తాకండి"></canvas>
+      <div class="rose-cover" id="roseCover">
+        <svg class="rose" viewBox="-55 -55 110 110" aria-hidden="true"><defs><radialGradient id="ro1"><stop offset="0" stop-color="#8e0f24"/><stop offset="1" stop-color="#c8203c"/></radialGradient><radialGradient id="ro2"><stop offset="0" stop-color="#a5132c"/><stop offset="1" stop-color="#e2405a"/></radialGradient><radialGradient id="ro3"><stop offset="0" stop-color="#b8163a"/><stop offset="1" stop-color="#f06a7e"/></radialGradient></defs><g fill="#3f7a3a" stroke="#2c5a28" stroke-width="0.8"><path d="M0,0 C10,-10 32,-10 50,0 C32,10 10,10 0,0Z" transform="rotate(145)"/><path d="M0,0 C10,-10 32,-10 50,0 C32,10 10,10 0,0Z" transform="rotate(35)"/><path d="M14,0 L44,0" stroke="#2c5a28" transform="rotate(145)"/><path d="M14,0 L44,0" stroke="#2c5a28" transform="rotate(35)"/></g><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(0.0) scale(1)" fill="url(#ro1)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(72.0) scale(1)" fill="url(#ro1)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(144.0) scale(1)" fill="url(#ro1)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(216.0) scale(1)" fill="url(#ro1)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(288.0) scale(1)" fill="url(#ro1)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(36.0) scale(0.74)" fill="url(#ro2)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(108.0) scale(0.74)" fill="url(#ro2)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(180.0) scale(0.74)" fill="url(#ro2)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(252.0) scale(0.74)" fill="url(#ro2)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(324.0) scale(0.74)" fill="url(#ro2)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(12.0) scale(0.5)" fill="url(#ro3)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(102.0) scale(0.5)" fill="url(#ro3)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(192.0) scale(0.5)" fill="url(#ro3)" stroke="#7a1022" stroke-width="0.8"/><path d="M0,0 C-22,-8 -30,-34 0,-44 C30,-34 22,-8 0,0Z" transform="rotate(282.0) scale(0.5)" fill="url(#ro3)" stroke="#7a1022" stroke-width="0.8"/><circle r="9" fill="#a3122d"/><path d="M0,-2 C6,-2 6,6 0,6 C-8,6 -8,-6 0,-8 C10,-8 12,6 2,10" fill="none" stroke="#6a0c1c" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="rose-tap">✦ గులాబీని తాకండి ✦</span>
+      </div>
     </div>
-    <p class="hint" id="hint">✦ శుభ ముహూర్తం చూడటానికి తాకండి లేదా స్వైప్ చేయండి ✦</p>
+    <p class="hint" id="hint">✦ గులాబీని తాకితే పూల వర్షంతో శుభ ముహూర్తం ✦</p>
+    <div class="shower" id="shower"></div>
   </section>
 
   <section class="card">
@@ -158,48 +172,50 @@
   }
   setInterval(petal, 700);
 
-  const cv = document.getElementById('scratch'), box = document.getElementById('reveal');
-  const ctx = cv.getContext('2d');
-  let revealed = false, drawing = false;
-  function setup(){
-    const r = box.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
-    cv.width = r.width*dpr; cv.height = r.height*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
-    const g = ctx.createLinearGradient(0,0,r.width,r.height);
-    g.addColorStop(0,'#c9973f'); g.addColorStop(.5,'#f1d9a0'); g.addColorStop(1,'#b8842f');
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = g; ctx.fillRect(0,0,r.width,r.height);
-    ctx.fillStyle = '#6b0f1a'; ctx.font = '700 18px "Noto Serif Telugu", serif'; ctx.textAlign = 'center';
-    ctx.fillText('✦ ఇక్కడ తాకండి ✦', r.width/2, r.height/2 + 6);
-  }
-  function pos(e){ const r = cv.getBoundingClientRect(); const t = e.touches ? e.touches[0] : e; return {x:t.clientX - r.left, y:t.clientY - r.top}; }
-  function scratch(e){
-    if (!drawing || revealed) return; e.preventDefault();
-    const p = pos(e);
-    ctx.globalCompositeOperation = 'destination-out';
-    ctx.beginPath(); ctx.arc(p.x, p.y, 24, 0, Math.PI*2); ctx.fill();
-    check();
-  }
-  let checkT = 0;
-  function check(){
-    if (Date.now() - checkT < 150) return; checkT = Date.now();
-    const d = ctx.getImageData(0,0,cv.width,cv.height).data; let clear = 0;
-    for (let i = 3; i < d.length; i += 64) if (d[i] === 0) clear++;
-    if (clear / (d.length/64) > 0.45) doReveal();
+  // Rose petal shower reveal
+  const box = document.getElementById('reveal'), card = document.getElementById('muhurtCard'), shower = document.getElementById('shower');
+  const roseCols = [['#8e0f24','#d42a46'],['#b8163a','#f06a7e'],['#c8203c','#ff8fa3'],['#a5132c','#e2405a'],['#d6335a','#ffb3c1']];
+  let revealed = false, gid = 0;
+  function rosePetal(x, y, burst){
+    const [c1,c2] = roseCols[Math.floor(Math.random()*roseCols.length)], id = 'rpg' + (gid++);
+    const s = 14 + Math.random()*14;
+    const el = document.createElement('div'); el.className = 'rp';
+    el.innerHTML = `<svg width="${s}" height="${s*1.15}" viewBox="0 0 20 23"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c2}"/><stop offset="1" stop-color="${c1}"/></linearGradient></defs><path d="M10 22 C2 16 0 8 3 3 C5 0 8 1 10 4 C12 1 15 0 17 3 C20 8 18 16 10 22Z" fill="url(#${id})"/><path d="M10 20 C9 14 9 9 10 5" stroke="${c1}" stroke-width=".6" fill="none" opacity=".6"/></svg>`;
+    shower.appendChild(el);
+    const H = card.clientHeight, W = card.clientWidth;
+    const sway = (Math.random()-.5)*120, rot = (Math.random()-.5)*720, dur = 2600 + Math.random()*2400;
+    let frames;
+    if (burst){
+      const a = Math.random()*Math.PI*2, d = 60 + Math.random()*110;
+      const bx = x + Math.cos(a)*d, by = y + Math.sin(a)*d*.7;
+      frames = [
+        {transform:`translate(${x}px,${y}px) rotate(0) scale(.3)`, opacity:0},
+        {transform:`translate(${bx}px,${by}px) rotate(${rot*.3}deg) scale(1)`, opacity:1, offset:.18},
+        {transform:`translate(${bx+sway*.5}px,${(by+H)/2}px) rotate(${rot*.7}deg) scale(1)`, opacity:1, offset:.6},
+        {transform:`translate(${bx+sway}px,${H+30}px) rotate(${rot}deg) scale(.9)`, opacity:0}
+      ];
+    } else {
+      frames = [
+        {transform:`translate(${x}px,-30px) rotate(0)`, opacity:0},
+        {transform:`translate(${x+sway*.4}px,${H*.3}px) rotate(${rot*.3}deg)`, opacity:1, offset:.15},
+        {transform:`translate(${x-sway*.3}px,${H*.65}px) rotate(${rot*.65}deg)`, opacity:1, offset:.6},
+        {transform:`translate(${x+sway}px,${H+30}px) rotate(${rot}deg)`, opacity:0}
+      ];
+    }
+    const anim = el.animate(frames, {duration: dur, easing:'cubic-bezier(.3,.1,.5,1)', fill:'forwards'});
+    anim.onfinish = () => el.remove();
   }
   function doReveal(){
-    revealed = true; cv.style.opacity = 0; setTimeout(() => cv.style.display = 'none', 800);
+    if (revealed) return; revealed = true;
+    box.classList.add('open');
+    const cr = card.getBoundingClientRect(), br = box.getBoundingClientRect();
+    const cx = br.left - cr.left + br.width/2, cy = br.top - cr.top + br.height/2;
+    for (let i = 0; i < 36; i++) setTimeout(() => rosePetal(cx, cy, true), i*18);
+    for (let i = 0; i < 70; i++) setTimeout(() => rosePetal(Math.random()*card.clientWidth, 0, false), 200 + i*55);
     document.getElementById('hint').textContent = '✦ సుముహూర్తం: గురువారం, నవంబర్ 26, 2026 ఉదయం 9:45 గంటలకు ✦';
-    for (let i = 0; i < 25; i++) setTimeout(petal, i*60);
   }
-  cv.addEventListener('mousedown', e => { drawing = true; scratch(e); });
-  cv.addEventListener('touchstart', e => { drawing = true; scratch(e); }, {passive:false});
-  window.addEventListener('mouseup', () => drawing = false);
-  window.addEventListener('touchend', () => drawing = false);
-  cv.addEventListener('mousemove', scratch);
-  cv.addEventListener('touchmove', scratch, {passive:false});
-  cv.addEventListener('dblclick', doReveal);
-  (document.fonts ? document.fonts.load('700 18px "Noto Serif Telugu"').then(() => document.fonts.ready) : Promise.resolve()).then(setup, setup);
-  window.addEventListener('resize', () => { if (!revealed) setup(); });
+  box.addEventListener('click', doReveal);
+  box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doReveal(); } });
 
   const target = new Date('2026-11-26T09:45:00+05:30').getTime();
   const pad = n => String(n).padStart(2,'0');
