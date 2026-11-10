@@ -153,6 +153,7 @@
   <p class="footer">✦ మీ రాక కోసం ఎదురుచూస్తున్నాము ✦</p>
 </div>
 
+<audio id="tune" src="tune.mp3" preload="auto" loop playsinline></audio>
 <script>
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); }), {threshold:.15});
   document.querySelectorAll('.card').forEach(c => io.observe(c));
@@ -231,6 +232,12 @@
     if (target <= Date.now()) document.getElementById('cdsub').textContent = 'శుభ ఘడియ వచ్చేసింది — మీ ఆశీస్సులకు ధన్యవాదాలు!';
   }
   tick(); setInterval(tick, 1000);
+
+  // Background tune: plays when the rose is tapped
+  const tune = document.getElementById('tune'); tune.volume = 0.8;
+  function playTune(){ const pr = tune.play(); if (pr && pr.catch) pr.catch(() => {}); }
+  box.addEventListener('click', playTune);
+  box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') playTune(); });
 </script>
 </body>
 </html>
