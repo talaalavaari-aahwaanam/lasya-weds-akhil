@@ -20,7 +20,7 @@
   html{scroll-behavior:smooth}
   body{
     font-family:'Noto Serif Telugu',serif; color:var(--ink); line-height:1.6;
-    background:radial-gradient(ellipse at top,#8a1726 0%,var(--maroon) 40%,var(--maroon-deep) 100%) fixed;
+    background-color:var(--maroon-deep);background-image:linear-gradient(115deg,rgba(255,255,255,0) 30%,rgba(255,225,200,.06) 45%,rgba(255,255,255,0) 60%),repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px),repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 1px,transparent 1px 4px),url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22140%22%20height%3D%22140%22%20viewBox%3D%220%200%20140%20140%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f0cf86%22%20stroke-width%3D%221%22%20stroke-opacity%3D%22.09%22%20fill-opacity%3D%22.09%22%3E%3Cg%20transform%3D%22translate%2838%2040%29%20rotate%28-25%29%20scale%281%29%22%3E%3Cpath%20d%3D%22M0%2C-22%20C16%2C-22%2024%2C-4%2016%2C10%20C10%2C20%20-4%2C22%20-10%2C14%20C-15%2C7%20-10%2C-1%20-3%2C1%20C2%2C3%202%2C9%20-3%2C9%22/%3E%3Cpath%20d%3D%22M0%2C-15%20C10%2C-14%2015%2C-3%2010%2C6%22%20opacity%3D%22.7%22/%3E%3Ccircle%20cx%3D%222%22%20cy%3D%22-4%22%20r%3D%221.3%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cx%3D%227%22%20cy%3D%22-9%22%20r%3D%221%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28108%20108%29%20rotate%28155%29%20scale%281%29%22%3E%3Cpath%20d%3D%22M0%2C-22%20C16%2C-22%2024%2C-4%2016%2C10%20C10%2C20%20-4%2C22%20-10%2C14%20C-15%2C7%20-10%2C-1%20-3%2C1%20C2%2C3%202%2C9%20-3%2C9%22/%3E%3Cpath%20d%3D%22M0%2C-15%20C10%2C-14%2015%2C-3%2010%2C6%22%20opacity%3D%22.7%22/%3E%3Ccircle%20cx%3D%222%22%20cy%3D%22-4%22%20r%3D%221.3%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cx%3D%227%22%20cy%3D%22-9%22%20r%3D%221%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28108%2034%29%22%3E%3Ccircle%20r%3D%222.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cx%3D%227%22%20r%3D%221.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cx%3D%22-7%22%20r%3D%221.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cy%3D%227%22%20r%3D%221.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cy%3D%22-7%22%20r%3D%221.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%2836%20108%29%22%3E%3Ccircle%20r%3D%222.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cx%3D%227%22%20r%3D%221.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cx%3D%22-7%22%20r%3D%221.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cy%3D%227%22%20r%3D%221.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3Ccircle%20cy%3D%22-7%22%20r%3D%221.2%22%20fill%3D%22%23f0cf86%22%20stroke%3D%22none%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),radial-gradient(ellipse at top,#8a1726 0%,var(--maroon) 40%,var(--maroon-deep) 100%);background-size:auto,auto,auto,140px 140px,100% 100%;background-attachment:fixed;
     min-height:100vh; overflow-x:hidden;
   }
   .petal{position:fixed;top:-40px;pointer-events:none;z-index:1;opacity:.85;animation:fall linear forwards}
@@ -44,6 +44,7 @@
   .ganesha{font-family:'Ramaraja',serif;font-size:20px;color:var(--maroon);margin-bottom:8px}
   .hon{display:block;font-size:15px;color:#a0702a;font-weight:500;margin-bottom:-6px}
   h1.names{font-family:'Suravaram',serif;font-weight:400;color:var(--maroon);font-size:clamp(40px,11vw,56px);line-height:1.35;margin:14px 0 4px}
+  .tho{font-family:'Noto Serif Telugu',serif;font-size:20px;color:#a0702a;margin-left:4px}
   .weds{display:block;font-family:'Noto Serif Telugu',serif;font-size:20px;color:var(--gold);margin:6px 0 10px}
   .tag{font-size:17px;color:#6a4a3c;margin-top:12px}
   h2{font-family:'Ramaraja',serif;font-weight:400;color:var(--maroon);font-size:28px;margin-bottom:4px;line-height:1.4}
@@ -125,6 +126,28 @@
   .curtain.open .valance{transform:translateY(-110%)}
   .curtain.open .seal{opacity:0;transform:translate(-50%,-50%) scale(1.4)}
   .curtain.open{opacity:0;pointer-events:none}
+  .foil{display:inline-block;color:#8a5a14;padding:0 .06em;
+    filter:drop-shadow(0 1px 0 rgba(90,30,10,.45)) drop-shadow(0 0 1px rgba(107,15,26,.35))}
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    .foil{color:transparent;-webkit-background-clip:text;background-clip:text;
+      background-image:
+        linear-gradient(105deg,transparent 40%,rgba(255,250,225,.95) 50%,transparent 60%),
+        linear-gradient(180deg,#9a6418 0%,#c9952f 24%,#f0d27e 42%,#b07a22 58%,#7a4a10 80%,#a8741f 100%);
+      background-size:260% 100%,100% 100%;background-repeat:no-repeat;
+      animation:foilSweep 6s ease-in-out infinite}
+  }
+  @keyframes foilSweep{0%{background-position:160% 0,0 0}35%{background-position:-60% 0,0 0}100%{background-position:-60% 0,0 0}}
+  .diyas{display:flex;align-items:flex-end;justify-content:center;gap:10px;margin:4px 0 10px}
+  .diya{width:38px;height:auto;overflow:visible}
+  .diya.mirror{transform:scaleX(-1)}
+  .diya-dot{color:var(--gold);font-size:13px;margin-bottom:6px}
+  .diya .flame{transform-origin:54px 24.5px;animation:flicker 1.7s ease-in-out infinite alternate}
+  .diya .glow{transform-origin:54px 15px;animation:glow 1.7s ease-in-out infinite alternate}
+  .diyas .diya:last-child .flame,.diyas .diya:last-child .glow{animation-duration:1.4s;animation-delay:-.6s}
+  @keyframes flicker{0%{transform:scale(1,1) skewX(0)}25%{transform:scale(.96,1.06) skewX(-3deg)}50%{transform:scale(1.03,.95) skewX(2deg)}75%{transform:scale(.98,1.09) skewX(-1.5deg)}100%{transform:scale(1.02,1) skewX(2.5deg)}}
+  @keyframes glow{0%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}100%{opacity:.8;transform:scale(.95)}}
+  .panch{font-size:11.5px;color:#8a6a4c;margin-top:10px;opacity:0;transition:opacity 1s ease 1.2s}
+  .panch.on{opacity:1}
 </style>
 </head>
 <body class="curtained">
@@ -142,7 +165,7 @@
     <p class="blessing">కీ॥ శే॥ తాళాల కనకలత రామచంద్రయ్య గార్ల<br>దివ్య ఆశీస్సులతో</p>
     <div class="eyebrow">శుభలేఖ</div>
     <div class="orn">✦ ❀ ✦</div>
-    <h1 class="names"><span class="hon">చి॥ ల॥ సౌ॥</span>లాస్య ప్రియ<span class="weds">❤ పరిణయం ❤</span><span class="hon">చి॥</span>అఖిల్</h1>
+    <h1 class="names"><span class="hon">చి॥ ల॥ సౌ॥</span><span class="foil">లాస్య ప్రియ</span><span class="weds">❤ పరిణయం ❤</span><span class="hon">చి॥</span><span class="foil">అఖిల్</span><span class="tho">తో</span></h1>
     <p class="tag">పెద్దల ఆశీస్సులతో, సంప్రదాయబద్ధంగా</p>
   </section>
 
@@ -158,7 +181,7 @@
         <span class="rose-tap">✦ గులాబీని తాకండి ✦</span>
       </div>
     </div>
-    <p class="hint" id="hint"></p>
+    <p class="panch" id="panch">శ్రీ పరాభవ నామ సంవత్సర కార్తీక బహుళ విదియ · ధనుర్లగ్నం</p>
     <div class="shower" id="shower"></div>
   </section>
 
@@ -176,7 +199,7 @@
 
   <section class="card later">
     <h2>వేదిక</h2>
-    <div class="orn">✦ ❀ ✦</div>
+    <div class="diyas"><svg class="diya" viewBox="0 0 64 44" aria-hidden="true"><defs><radialGradient id="dg1" cx="50%" cy="55%" r="50%"><stop offset="0" stop-color="#ffd76a" stop-opacity=".8"/><stop offset="1" stop-color="#ffb43a" stop-opacity="0"/></radialGradient><linearGradient id="df1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3b0"/><stop offset=".45" stop-color="#ffc23d"/><stop offset="1" stop-color="#e8641e"/></linearGradient><linearGradient id="db1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d0703f"/><stop offset=".55" stop-color="#a24a24"/><stop offset="1" stop-color="#6e2a14"/></linearGradient></defs><circle class="glow" cx="54" cy="15" r="13" fill="url(#dg1)"/><g class="flame"><path d="M54,3 C57.5,10 60.5,14 60.5,18.5 C60.5,22 57.5,24.5 54,24.5 C50.5,24.5 47.5,22 47.5,18.5 C47.5,14 50.5,10 54,3Z" fill="url(#df1)"/><path d="M54,11 C55.8,14.5 57,16.6 57,19 C57,21.5 55.7,23 54,23 C52.3,23 51,21.5 51,19 C51,16.6 52.2,14.5 54,11Z" fill="#fffbe6"/></g><path d="M53,24 L54.5,26" stroke="#5a3a1a" stroke-width="1.4"/><path d="M5,27 C4,37 15,42 28,41.5 C41,41 50,33 58,25.5 C46,25 18,24 5,27Z" fill="url(#db1)" stroke="#5e2410" stroke-width="1"/><path d="M5,27 C12,23 42,23 58,25.5 C44,28 16,29.5 5,27Z" fill="#de8a5c" stroke="#7a3418" stroke-width=".9"/><ellipse cx="24" cy="26.6" rx="12" ry="1.6" fill="#5a2a10" opacity=".7"/><g fill="#f7dcc0" opacity=".9"><circle cx="13" cy="32.5" r=".9"/><circle cx="21" cy="35.5" r=".9"/><circle cx="30" cy="36" r=".9"/><circle cx="39" cy="33.5" r=".9"/></g><path d="M9,30 C16,33 30,34 44,30" fill="none" stroke="#f0b48c" stroke-width=".7" opacity=".6"/></svg><span class="diya-dot">❀</span><svg class="diya mirror" viewBox="0 0 64 44" aria-hidden="true"><defs><radialGradient id="dg2" cx="50%" cy="55%" r="50%"><stop offset="0" stop-color="#ffd76a" stop-opacity=".8"/><stop offset="1" stop-color="#ffb43a" stop-opacity="0"/></radialGradient><linearGradient id="df2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3b0"/><stop offset=".45" stop-color="#ffc23d"/><stop offset="1" stop-color="#e8641e"/></linearGradient><linearGradient id="db2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d0703f"/><stop offset=".55" stop-color="#a24a24"/><stop offset="1" stop-color="#6e2a14"/></linearGradient></defs><circle class="glow" cx="54" cy="15" r="13" fill="url(#dg2)"/><g class="flame"><path d="M54,3 C57.5,10 60.5,14 60.5,18.5 C60.5,22 57.5,24.5 54,24.5 C50.5,24.5 47.5,22 47.5,18.5 C47.5,14 50.5,10 54,3Z" fill="url(#df2)"/><path d="M54,11 C55.8,14.5 57,16.6 57,19 C57,21.5 55.7,23 54,23 C52.3,23 51,21.5 51,19 C51,16.6 52.2,14.5 54,11Z" fill="#fffbe6"/></g><path d="M53,24 L54.5,26" stroke="#5a3a1a" stroke-width="1.4"/><path d="M5,27 C4,37 15,42 28,41.5 C41,41 50,33 58,25.5 C46,25 18,24 5,27Z" fill="url(#db2)" stroke="#5e2410" stroke-width="1"/><path d="M5,27 C12,23 42,23 58,25.5 C44,28 16,29.5 5,27Z" fill="#de8a5c" stroke="#7a3418" stroke-width=".9"/><ellipse cx="24" cy="26.6" rx="12" ry="1.6" fill="#5a2a10" opacity=".7"/><g fill="#f7dcc0" opacity=".9"><circle cx="13" cy="32.5" r=".9"/><circle cx="21" cy="35.5" r=".9"/><circle cx="30" cy="36" r=".9"/><circle cx="39" cy="33.5" r=".9"/></g><path d="M9,30 C16,33 30,34 44,30" fill="none" stroke="#f0b48c" stroke-width=".7" opacity=".6"/></svg></div>
     <div class="venue-name">పద్మావతి శ్రీనివాస కళ్యాణ మండపం</div>
     <p class="addr">వనపర్తి, తెలంగాణ</p>
     <a class="btn" href="https://www.google.com/maps?q=16.362479107959317,78.04327161498558" target="_blank" rel="noopener">📍 వేదిక లొకేషన్ చూడండి</a>
@@ -285,6 +308,7 @@
   function doReveal(){
     if (revealed) return; revealed = true;
     box.classList.add('open');
+    document.getElementById('panch').classList.add('on');
     const cr = card.getBoundingClientRect(), br = box.getBoundingClientRect();
     const cx = br.left - cr.left + br.width/2, cy = br.top - cr.top + br.height/2;
     for (let i = 0; i < 36; i++) setTimeout(() => rosePetal(cx, cy, true), i*18);
@@ -294,7 +318,6 @@
       document.querySelectorAll('.later').forEach((el, i) => setTimeout(() => el.classList.add('on','show'), 350*(i+1)));
       setTimeout(() => cc.scrollIntoView({behavior:'smooth', block:'nearest'}), 400);
     }, 1400);
-    document.getElementById('hint').textContent = '✦ సుముహూర్తం: గురువారం, నవంబర్ 26, 2026 ఉదయం 9:45 గంటలకు ✦';
   }
   box.addEventListener('click', doReveal);
   box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doReveal(); } });
