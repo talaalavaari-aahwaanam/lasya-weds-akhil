@@ -350,9 +350,21 @@
     setTimeout(() => {
       const cc = document.getElementById('countCard'); cc.classList.add('on','show');
       document.querySelectorAll('.later').forEach((el, i) => setTimeout(() => el.classList.add('on','show'), 350*(i+1)));
-      setTimeout(() => cc.scrollIntoView({behavior:'smooth', block:'nearest'}), 400);
     }, 1400);
   }
+  // Auto-tour: if the guest doesn't scroll themselves, glide to each next card every 5 seconds
+  let tourStarted = false, userMoved = false;
+  function stopTour(){ userMoved = true; }
+  function startTour(){
+    if (tourStarted) return; tourStarted = true;
+    setTimeout(() => ['wheel','touchstart','keydown','mousedown'].forEach(t => addEventListener(t, stopTour, {passive:true, once:true})), 800);
+    const slides = [document.getElementById('countCard'), ...document.querySelectorAll('section.card.later')];
+    slides.forEach((s, i) => setTimeout(() => {
+      if (userMoved) return;
+      s.scrollIntoView({behavior:'smooth', block:'center'});
+    }, 5000 * (i + 1)));
+  }
+  box.addEventListener('click', startTour);
   box.addEventListener('click', doReveal);
   box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doReveal(); } });
 
